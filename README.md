@@ -1,2 +1,2 @@
-# SecondBrain
+# Brainly
 SecondBrain
