@@ -15,17 +15,7 @@ declare global {
 }
 
 import { UserModel, ContentModel, TagModel, LinkModel } from './db.js';
-
-// JWT secret (hardcoded as requested — move to env var in production)
-const JWT_SECRET = "DetuDragu105";
-
-// MongoDB connection
-const dbUsername = "rutu_shah_user";
-const dbPassword = "Detu105";
-mongoose
-    .connect(`mongodb+srv://${dbUsername}:${dbPassword}@cluster0.zwa3ewd.mongodb.net/brainly`)
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.error("MongoDB connection error:", err));
+import { JWT_SECRET, dbUsername, dbPassword } from './config.js';
 
 
 // ─── SIGNUP ───────────────────────────────────────────────────────────────────
