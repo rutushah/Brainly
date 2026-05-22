@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import express from 'express';
-import { UserModel } from './db.js';
-import { JWT_SECRET } from './config.js';
+import { UserModel } from '../model/UserModel.js';
+import { JWT_SECRET } from '../configs/config.js';
 
 export const userRouter = express.Router();
 

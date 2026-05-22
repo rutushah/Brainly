@@ -1,6 +1,6 @@
 import express from 'express';
-import { ContentModel } from './db.js';
-import { auth } from './middleware.js';
+import { ContentModel } from '../model/ContentModel.js';
+import { auth } from '../middleware/middleware.js';
 
 export const contentRouter = express.Router();
 

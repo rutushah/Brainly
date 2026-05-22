@@ -2,8 +2,7 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 const app = express();
 app.use(express.json());
-import { JWT_SECRET} from './config.js';
-
+import { JWT_SECRET} from '../configs/config.js';
 
 // ─── AUTH MIDDLEWARE ──────────────────────────────────────────────────────────
 export function auth(req: express.Request, res: express.Response, next: express.NextFunction) {

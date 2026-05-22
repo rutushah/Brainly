@@ -1,12 +1,15 @@
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import express from 'express';
-import { UserModel, ContentModel, LinkModel } from './db.js';
-import { JWT_SECRET, dbUsername, dbPassword } from './config.js';
-import { auth } from './middleware.js';
-import { userRouter } from './userLogin.js';
-import { contentRouter } from './content.js';
-import { shareLinkRouter } from './shareLink.js';
+import { ContentModel } from './model/ContentModel.js';
+import { UserModel } from './model/UserModel.js';
+import { LinkModel } from './model/LinkModel.js';
+
+import { JWT_SECRET, dbUsername, dbPassword } from './configs/config.js';
+import { auth } from './middleware/middleware.js';
+import { userRouter } from './controller/userLogin.js';
+import { contentRouter } from './controller/content.js';
+// import { shareLinkRouter } from './controller/shareLink.js';
 
 declare global {
     namespace Express {
@@ -20,13 +23,7 @@ const app = express();
 app.use(express.json());
 app.use('/api/v1', userRouter);
 app.use('/api/v1', contentRouter);
-app.use('/api/v1/brain', shareLinkRouter)
-
-// mongoose
-//     .connect(`mongodb+srv://${dbUsername}:${dbPassword}@cluster0.zwa3ewd.mongodb.net/brainly`)
-//     .then(() => console.log("Connected to MongoDB"))
-//     .catch((err) => console.error("MongoDB connection error:", err));
-
+// app.use('/api/v1/brain', shareLinkRouter);
 
 // ─── START SERVER ─────────────────────────────────────────────────────────────
 app.listen(3000, () => {
