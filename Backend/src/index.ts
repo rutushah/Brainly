@@ -9,7 +9,7 @@ import { JWT_SECRET, dbUsername, dbPassword } from './configs/config.js';
 import { auth } from './middleware/middleware.js';
 import { userRouter } from './controller/userLogin.js';
 import { contentRouter } from './controller/content.js';
-// import { shareLinkRouter } from './controller/shareLink.js';
+import { shareLinkRouter } from './controller/shareLink.js';
 
 declare global {
     namespace Express {
@@ -23,7 +23,7 @@ const app = express();
 app.use(express.json());
 app.use('/api/v1', userRouter);
 app.use('/api/v1', contentRouter);
-// app.use('/api/v1/brain', shareLinkRouter);
+app.use('/api/v1/brain', shareLinkRouter);
 
 // ─── START SERVER ─────────────────────────────────────────────────────────────
 app.listen(3000, () => {
