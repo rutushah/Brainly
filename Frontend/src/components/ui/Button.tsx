@@ -12,8 +12,8 @@ export interface ButtonProps {
 }
 
 const variantStyles = {
-    primary: "bg-blue-600 text-white hover:bg-orange-300 hover:text-white",
-    secondary: "bg-blue-300 text-blue-600 hover:bg-orange-300 hover:text-white",
+    primary: "bg-indigo-500 text-white hover:bg-indigo-700 hover:text-white",
+    secondary: "bg-white text-indigo-500 hover:bg-indigo-50 hover:text-indigo",
 }
 const sizeStyles = {
     "sm" : "py-1 px-2",
@@ -24,6 +24,6 @@ const sizeStyles = {
 const defaultStyles = "rounded-md p-4 flex items-center gap-2"
 
 export const Button = (props: ButtonProps) => {
-    return <button  className={`${variantStyles[props.variant]} ${defaultStyles} 
+    return <button onClick={props.onClick} className={`${variantStyles[props.variant]} ${defaultStyles} 
     ${sizeStyles[props.size]}`}>{props.startIcon ? <div className="pr-2"> {props.startIcon} </div> : null} {props.text}{props.endIcon}</button>
 }
