@@ -3,7 +3,6 @@ import { DeleteIcon } from "../../icons/DeleteIcon";
 import { DocumentTexIcon } from "../../icons/DocumentTextIcon";
 import { ShareIcon } from "../../icons/ShareIcon";
 import { BACKEND_URL } from "../../config";
-import { Button } from "./Button";
 import { useEffect } from "react";
 
 interface CardProps {
