@@ -9,7 +9,13 @@ export interface ButtonProps {
     startIcon?: ReactElement;
     endIcon?: ReactElement;
     onClick?: () => void;
+    // disabled?: boolean;
+    className?: string;
+    fullWidth? :boolean;
+    loading?: boolean;
 }
+
+
 
 const variantStyles = {
     primary: "bg-indigo-500 text-white hover:bg-indigo-700 hover:text-white",
@@ -21,9 +27,15 @@ const sizeStyles = {
     "lg" : "py-3 px-6",
 }
 
-const defaultStyles = "rounded-md p-4 flex items-center gap-2"
+const defaultStyles = "rounded-md flex items-center gap-2 p-4 transition-colors"
 
 export const Button = (props: ButtonProps) => {
-    return <button onClick={props.onClick} className={`${variantStyles[props.variant]} ${defaultStyles} 
-    ${sizeStyles[props.size]}`}>{props.startIcon ? <div className="pr-2"> {props.startIcon} </div> : null} {props.text}{props.endIcon}</button>
+    return <button onClick={props.onClick} className={
+        `${variantStyles[props.variant]} 
+         ${defaultStyles} 
+         ${sizeStyles[props.size]}
+         ${props.className || ""}
+         ${props.fullWidth? " w-full justify-center item-center" : ""}`
+         }>
+        {props.startIcon ? <div className="pr-2"> {props.startIcon} </div> : null} {props.text}{props.endIcon}</button>
 }
