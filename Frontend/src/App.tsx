@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import { SignUp } from './pages/SignUp';
 import { Login } from './pages/SignIn';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { ShareBrain } from './pages/ShareBrain';
 
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
        <Route path='/signup' element={<SignUp/>} />
        <Route path='/signin' element={<Login/>} />
        <Route path='/dashboard' element={<Dashboard/>} />
+       <Route path='/share/:shareLink' element={<ShareBrain/>} />
+
+   
+
 
 
      </Routes>

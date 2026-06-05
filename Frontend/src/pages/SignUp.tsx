@@ -14,7 +14,7 @@ export function SignUp(){
     const passwordRef = useRef<HTMLInputElement>(null);
     
 
-    async function signup(){
+    async function userSignup(){
         try{
                 const username = usernameRef.current?.value;
                 const password = passwordRef.current?.value;
@@ -56,7 +56,7 @@ export function SignUp(){
                     text="Sign Up"
                     fullWidth={true}
                     className = "py-3 rounded-lg  transition-colors" 
-                    onClick={signup}/>
+                    onClick={userSignup}/>
             {/* </div> */}
 
         {/* footer code */}
